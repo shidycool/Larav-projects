@@ -58,4 +58,5 @@ Route::get('/cruds/create', [CrudController::class, 'create'])->name('cruds.crea
 Route::post('/cruds/create', [CrudController::class, 'store'])->name('cruds.store');
 Route::get('/cruds/{product}/edit', [CrudController::class, 'edit'])->name('cruds.edit');
 Route::put('/cruds/{product}/update', [CrudController::class, 'update'])->name('cruds.update');
+Route::delete('/cruds/{product}/destroy', [CrudController::class, 'destroy'])->name('cruds.destroy');
     

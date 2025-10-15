@@ -9,7 +9,7 @@ class CrudController extends Controller
 {
     public function index(){
       $products = Crud::all();
-      return view('cruds.index', ['products' =>$products]);
+      return view('cruds.index', ['products' => $products]);
     }
 
     public function create(){
@@ -44,6 +44,12 @@ class CrudController extends Controller
       $product->update($data);
 
       return redirect(route('cruds.index'))->with('success', 'Product Updated Successfully');
+    }
+
+    public function destroy(Crud $product){
+      $product->delete();
+
+      return redirect(route('cruds.index'))->with('success', 'Product Deleted Successfully');
     }
 }
 
