@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 use App\Http\Controllers\CrudController;
+use App\Livewire\Crud;
 
 // Route::get('/', function () {
 //     return Inertia::render('welcome');
@@ -59,4 +60,6 @@ Route::post('/cruds/create', [CrudController::class, 'store'])->name('cruds.stor
 Route::get('/cruds/{product}/edit', [CrudController::class, 'edit'])->name('cruds.edit');
 Route::put('/cruds/{product}/update', [CrudController::class, 'update'])->name('cruds.update');
 Route::delete('/cruds/{product}/destroy', [CrudController::class, 'destroy'])->name('cruds.destroy');
+
+Route::get('/crud', Crud::class);
     
